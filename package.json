@@ -9,12 +9,12 @@
   "jest": {
     "preset": "jest-react-native",
     "moduleNameMapper": {
-     "\\./datepicker$": "<rootDir>/node_modules/tcomb-form-native/lib/templates/bootstrap/datepicker.ios.js",
+      "\\./datepicker$": "<rootDir>/node_modules/tcomb-form-native/lib/templates/bootstrap/datepicker.ios.js",
       "\\./select$": "<rootDir>/node_modules/tcomb-form-native/lib/templates/bootstrap/select.ios.js"
-   },
-   "transformIgnorePatterns": [
-     "node_modules/(?!react-native|tcomb-form-native|apsl-react-native-button)"
-   ],
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-native|tcomb-form-native|apsl-react-native-button)"
+    ],
     "collectCoverage": true,
     "verbose": true
   },
@@ -23,6 +23,7 @@
     "react-addons-shallow-compare": "^15.3.2",
     "react-native": "^0.37.0",
     "react-native-google-analytics-bridge": "^4.0.1",
+    "react-native-maps": "^0.11.0",
     "react-native-navbar": "^1.5.4",
     "react-native-side-menu": "^0.20.1",
     "react-native-tab-view": "0.0.40",

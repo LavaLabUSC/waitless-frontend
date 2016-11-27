@@ -16,6 +16,9 @@ import {
   Modal,
 } from 'react-native'
 
+// React Native Maps
+import MapView from 'react-native-maps';
+
 // App Globals
 import AppStyles from '../styles'
 
@@ -40,7 +43,6 @@ class ComingSoon extends Component {
   static propTypes = {
     navigator: React.PropTypes.object.isRequired,
     showSplashScreen: React.PropTypes.bool,
-    placeholder: React.PropTypes.string,
   }
 
   /**
@@ -65,28 +67,19 @@ class ComingSoon extends Component {
     * RENDER
     */
   render = () => {
-    let text = this.props.placeholder || 'Coming soon...'
-
     // Done
     return (
       <View style={[AppStyles.container, AppStyles.containerCentered]}>
-        <Text style={[AppStyles.baseText, AppStyles.p]}>
-          {text}
-        </Text>
-
-        <View style={[AppStyles.spacer_10]} />
-
-        <Button type={'outlined'}
-          text={'Tap to test the back button'}
-          onPress={()=>this._navigate(text)} />
-
-        <Modal animationType={'fade'}
-          transparent={false}
-          visible={this.state.splashScreenVisible}
-          onRequestClose={()=>{}}>
-          <FirstLoad navigator={this.props.navigator}
-            close={this.onSplashSkip} />
-        </Modal>
+        <MapView
+          style={AppStyles.map}
+          showsUserLocation = {true}
+          initialRegion={{
+            latitude: 37.78825,
+            longitude: -122.4324,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          }}
+        />
       </View>
     );
   }
