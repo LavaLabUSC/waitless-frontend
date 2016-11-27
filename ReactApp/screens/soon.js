@@ -37,6 +37,16 @@ class ComingSoon extends Component {
 
     this.state = {
       splashScreenVisible: this.props.showSplashScreen || false,
+      markers: [
+        {
+          title: "Bacaro L.A.",
+          description: "10 mins",
+          latlng: {
+            latitude: 34.034450,
+            longitude: -118.283139,
+          }
+        }
+      ]
     }
   }
 
@@ -72,14 +82,23 @@ class ComingSoon extends Component {
       <View style={[AppStyles.container, AppStyles.containerCentered]}>
         <MapView
           style={AppStyles.map}
-          showsUserLocation = {true}
+          showsUserLocation={true}
           initialRegion={{
             latitude: 37.78825,
             longitude: -122.4324,
             latitudeDelta: 0.0922,
             longitudeDelta: 0.0421,
           }}
-        />
+        >
+          {this.state.markers.map(marker => (
+            <MapView.Marker
+              coordinate={marker.latlng}
+              title={marker.title}
+              description={marker.description}
+              key={marker.title}
+            />
+          ))}
+        </MapView>
       </View>
     );
   }
