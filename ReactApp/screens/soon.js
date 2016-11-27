@@ -40,10 +40,74 @@ class ComingSoon extends Component {
       markers: [
         {
           title: "Bacaro L.A.",
-          description: "10 mins",
+          description: "Intimate wine bar with Italian tapas",
           latlng: {
             latitude: 34.034450,
-            longitude: -118.283139,
+            longitude: -118.283139
+          }
+        },
+        {
+          title: "901 Bar and Grill",
+          description: "Watering hole hopping with USC students",
+          latlng: {
+            latitude: 34.025601,
+            longitude: -118.277170
+          }
+        },
+        {
+          title: "Blaze Pizza",
+          description: "Hip spot for crispy creative pies",
+          latlng: {
+            latitude: 34.023261,
+            longitude: -118.279002
+          }
+        },
+        {
+          title: "Grinder",
+          description: "Late night venue for common comfort eats",
+          latlng: {
+            latitude: 34.026591,
+            longitude: -118.276109
+          }
+        },
+        {
+          title: "La Barca Restaurant",
+          description: "Festive Mexican spot with big margharitas",
+          latlng: {
+            latitude: 34.033915,
+            longitude: -118.290898
+          }
+        },
+        {
+          title: "The Lab Gastropub",
+          description: "Science-themed spot for upscale pub grub",
+          latlng: {
+            latitude: 34.019903,
+            longitude: -118.280058
+          }
+        },
+        {
+          title: "Pasta Roma",
+          description: "Counter-serve spot for Italian standards",
+          latlng: {
+            latitude: 34.025569,
+            longitude: -118.277418
+          }
+        },
+        {
+          title: "Lemonade",
+          description: "Quick stop for seasonal comfort food",
+          latlng: {
+            latitude: 34.020658,
+            longitude: -118.286006
+          }
+        },
+        {
+          title: "Chichen Itza Restaurant",
+          description: "Foodie destination for Yucatecán fare",
+          latlng: {
+            latitude: 34.017355,
+            longitude: -118.278383
           }
         }
       ]
