@@ -234,4 +234,9 @@ module.exports = StyleSheet.create({
     marginBottom: 10,
     backgroundColor: "#fff",
   },
+
+  /* Map */
+  map: {
+    ...StyleSheet.absoluteFillObject,
+  },
 });

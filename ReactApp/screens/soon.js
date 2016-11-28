@@ -16,6 +16,14 @@ import {
   Modal,
 } from 'react-native'
 
+// React Native Maps
+import MapView from 'react-native-maps';
+
+// Custom Markers
+import RedFlag from '../images/red-marker-small.png'
+import YellowFlag from '../images/yellow-marker-small.png'
+import GreenFlag from '../images/green-marker-small.png'
+
 // App Globals
 import AppStyles from '../styles'
 
@@ -34,13 +42,95 @@ class ComingSoon extends Component {
 
     this.state = {
       splashScreenVisible: this.props.showSplashScreen || false,
+      markers: [
+        {
+          title: "Bacaro L.A.",
+          description: "Intimate wine bar with Italian tapas",
+          image: GreenFlag,
+          latlng: {
+            latitude: 34.034450,
+            longitude: -118.283139
+          }
+        },
+        {
+          title: "901 Bar and Grill",
+          description: "Watering hole hopping with USC students",
+          image: GreenFlag,
+          latlng: {
+            latitude: 34.025601,
+            longitude: -118.277170
+          }
+        },
+        {
+          title: "Blaze Pizza",
+          description: "Hip spot for crispy creative pies",
+          image: GreenFlag,
+          latlng: {
+            latitude: 34.023261,
+            longitude: -118.279002
+          }
+        },
+        {
+          title: "Grinder",
+          description: "Late night venue for common comfort eats",
+          image: RedFlag,
+          latlng: {
+            latitude: 34.026591,
+            longitude: -118.276109
+          }
+        },
+        {
+          title: "La Barca Restaurant",
+          description: "Festive Mexican spot with big margharitas",
+          image: RedFlag,
+          latlng: {
+            latitude: 34.033915,
+            longitude: -118.290898
+          }
+        },
+        {
+          title: "The Lab Gastropub",
+          description: "Science-themed spot for upscale pub grub",
+          image: RedFlag,
+          latlng: {
+            latitude: 34.019903,
+            longitude: -118.280058
+          }
+        },
+        {
+          title: "Pasta Roma",
+          description: "Counter-serve spot for Italian standards",
+          image: YellowFlag,
+          latlng: {
+            latitude: 34.025569,
+            longitude: -118.277418
+          }
+        },
+        {
+          title: "Lemonade",
+          description: "Quick stop for seasonal comfort food",
+          image: YellowFlag,
+          latlng: {
+            latitude: 34.020658,
+            longitude: -118.286006
+          }
+        },
+        {
+          title: "Chichen Itza Restaurant",
+          description: "Foodie destination for Yucatecán fare",
+          image: YellowFlag,
+          latlng: {
+            latitude: 34.017355,
+            longitude: -118.278383
+          }
+        }
+      ]
     }
   }
 
   static propTypes = {
     navigator: React.PropTypes.object.isRequired,
     showSplashScreen: React.PropTypes.bool,
-    placeholder: React.PropTypes.string,
   }
 
   /**
@@ -65,28 +155,29 @@ class ComingSoon extends Component {
     * RENDER
     */
   render = () => {
-    let text = this.props.placeholder || 'Coming soon...'
-
     // Done
     return (
       <View style={[AppStyles.container, AppStyles.containerCentered]}>
-        <Text style={[AppStyles.baseText, AppStyles.p]}>
-          {text}
-        </Text>
-
-        <View style={[AppStyles.spacer_10]} />
-
-        <Button type={'outlined'}
-          text={'Tap to test the back button'}
-          onPress={()=>this._navigate(text)} />
-
-        <Modal animationType={'fade'}
-          transparent={false}
-          visible={this.state.splashScreenVisible}
-          onRequestClose={()=>{}}>
-          <FirstLoad navigator={this.props.navigator}
-            close={this.onSplashSkip} />
-        </Modal>
+        <MapView
+          style={AppStyles.map}
+          showsUserLocation={true}
+          initialRegion={{
+            latitude: 34.026027,
+            longitude: -118.286,
+            latitudeDelta: 0.01211,
+            longitudeDelta: 0.01296,
+          }}
+        >
+          {this.state.markers.map(marker => (
+            <MapView.Marker
+              coordinate={marker.latlng}
+              title={marker.title}
+              description={marker.description}
+              image={marker.image}
+              key={marker.title}
+            />
+          ))}
+        </MapView>
       </View>
     );
   }

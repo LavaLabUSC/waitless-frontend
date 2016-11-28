@@ -14,7 +14,7 @@ exports.title = 'GlobalConfig';
 
 export default {
 	// App Details
-	appName: 'StarterKit',
+	appName: 'Waitless',
 
 	// Window Dimensions
 	windowHeight: window.height,
