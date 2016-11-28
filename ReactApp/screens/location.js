@@ -34,8 +34,8 @@ const defaultData = [
     image: 'https://media-cdn.tripadvisor.com/media/photo-s/0a/79/da/21/photo1jpg.jpg',
   },
   {
-    title: 'Travel Time: 10 minutes',
-    image: 'http://uberinsurancetoronto.com/wp-content/uploads/2016/01/Uber-App.png',
+    title: '',
+    image: 'http://i.imgur.com/OlDvAF2.png',
   },
   {
     title: 'Our Wait Estimate: 20 minutes',
