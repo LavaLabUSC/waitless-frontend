@@ -25,6 +25,7 @@ import ComingSoon from '../screens/soon'               // **
 import FormExample from '../screens/forms'             // **
 import ListViewExample from '../screens/listview'      // **
 import Tabs from '../screens/tabs'                     // **
+import Location from '../screens/location'             // by Tony
 
 
 /* Component ==================================================================== */
@@ -41,6 +42,7 @@ class Menu extends Component {
         {title: 'Forms', component: FormExample},
         {title: 'List Example', component: ListViewExample, props: {passProps: {noImages: true}}},
         {title: 'List Example 2', component: ListViewExample},
+        {title: 'Location Page', component: Location},
       ],
     };
   }
